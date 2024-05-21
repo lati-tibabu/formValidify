@@ -88,13 +88,25 @@
                     $errors[] = "Invalid email format.";
                 }
 
-                // Validate feedback
+                // // Validate feedback
+                // if (empty($_POST['feedback'])) {
+                //     $errors[] = "Feedback is required.";
+                // } elseif (strlen($_POST['feedback']) > MAX_FEEDBACK_LENGTH) {
+                //     $errors[] = "Feedback must not exceed " . MAX_FEEDBACK_LENGTH . " characters.";
+                // }
+
                 if (empty($_POST['feedback'])) {
                     $errors[] = "Feedback is required.";
-                } elseif (strlen($_POST['feedback']) > MAX_FEEDBACK_LENGTH) {
-                    $errors[] = "Feedback must not exceed " . MAX_FEEDBACK_LENGTH . " characters.";
-                }
+                  } else {
+                    $wordCount = str_word_count($_POST['feedback']);
+                    if ($wordCount < 20) {
+                      $errors[] = "Feedback must be at least 20 words long.";
+                    } elseif ($wordCount > 50) {
+                      $errors[] = "Feedback must not exceed 50 words.";
+                    }
+                  }
 
+                  
                 // Validate gender
                 if (empty($_POST['gender'])) {
                     $errors[] = "Gender is required.";

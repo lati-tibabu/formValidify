@@ -1,0 +1,182 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validify Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cfee536f6f.js" crossorigin="anonymous" async></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Josefin+Sans&family=Mulish&family=Source+Code+Pro&family=VT323&display=swap" rel="stylesheet">
+    <script>
+        function openform() {
+            var form_area = document.querySelector(".form_area");
+            var view_button_area = document.querySelector(".view_button_area");
+            view_button_area.style.display = "none";
+            form_area.style.display = "flex";
+            form_area.style.height = "fit-content";
+            // document.querySelector(".form_area").style.display = "flex";
+
+            var please_area = document.querySelector(".please_area");
+            please_area.style.display = "none";
+        }
+
+        function closeform() {
+            var form_area = document.querySelector(".form_area");
+            var view_button_area = document.querySelector(".view_button_area");
+
+            view_button_area.style.display = "flex";
+            form_area.style.display = "none";
+            form_area.style.height = "0";
+
+
+        }
+
+        function noOpenform() {
+            var view_button_area = document.querySelector(".view_button_area");
+            view_button_area.style.display = "none";
+
+            var please_area = document.querySelector(".please_area");
+            please_area.style.display = "flex";
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="view_button_area">
+        <div class="view_btn">
+            wanna see the form?
+        </div>
+
+        <div class="option_buttons">
+            <div class="_option no" onclick="openform()">Yes, ofcourse</div>
+            <div class="_option no" onclick="noOpenform()">No, not now</div>
+        </div>
+    </div>
+
+    <div class="form_area">
+        <div class="close_button" onclick="closeform()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <form action="validfy.php" id="mainform">
+            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="text" id="email" name="email" placeholder="Email">
+            <textarea name="feedback" id="feedback"></textarea>
+            <div class="gender_area">
+                <label for="gender">Gender</label>
+                <input type="radio" id="gender" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="gender" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+
+            <button id="suggstion_button" type="submit">Add Suggestion</button>
+        </form>
+    </div>
+
+    <div class="please_area">
+        <img src="please.png" class="please" alt="">
+        <h1 class="pleasetxt">pleeeese see it</h1>
+
+        <div class="_option yes" onclick="openform()">Ok, let me see</div>
+
+    </div>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validify Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cfee536f6f.js" crossorigin="anonymous" async></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Josefin+Sans&family=Mulish&family=Source+Code+Pro&family=VT323&display=swap" rel="stylesheet">
+    <script>
+        function openform() {
+            var form_area = document.querySelector(".form_area");
+            var view_button_area = document.querySelector(".view_button_area");
+            view_button_area.style.display = "none";
+            form_area.style.display = "flex";
+            form_area.style.height = "fit-content";
+
+            var please_area = document.querySelector(".please_area");
+            please_area.style.display = "none";
+        }
+
+        function closeform() {
+            var form_area = document.querySelector(".form_area");
+            var view_button_area = document.querySelector(".view_button_area");
+
+            view_button_area.style.display = "flex";
+            form_area.style.display = "none";
+            form_area.style.height = "0";
+        }
+
+        function noOpenform() {
+            var view_button_area = document.querySelector(".view_button_area");
+            view_button_area.style.display = "none";
+
+            var please_area = document.querySelector(".please_area");
+            please_area.style.display = "flex";
+        }
+
+        function suggestion() {
+            var view_button_area = document.querySelector(".view_button_area");
+            view_button_area.style.display = "none";
+
+            var form_area = document.querySelector(".form_area");
+            form_area.style.display = "flex";
+            form_area.style.height = "fit-content";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="view_button_area">
+        <div class="view_btn">
+            wanna see the form?
+        </div>
+
+        <div class="option_buttons">
+            <div class="_option no" onclick="openform()">Yes, ofcourse</div>
+            <div class="_option no" onclick="noOpenform()">No, not now</div>
+        </div>
+    </div>
+
+    <div class="form_area">
+        <div class="close_button" onclick="closeform()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <form action="validfy.php" method="POST" id="mainform">
+            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="text" id="email" name="email" placeholder="Email">
+            <textarea name="feedback" id="feedback" maxlength="250" placeholder="Your feedback (max 250 characters)"></textarea>
+            <div class="gender_area">
+                <label for="gender">Gender</label>
+                <input type="radio" id="gender" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="gender" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+            <button id="suggstion_button" type="submit" onclick="suggestion()">Add Suggestion</button>
+        </form>
+    </div>
+
+    <div class="please_area">
+        <img src="please.png" class="please" alt="">
+        <h1 class="pleasetxt">pleeeese see it</h1>
+        <div class="_option yes" onclick="openform()">Ok, let me see</div>
+    </div>
+</body>
+
+</html>
